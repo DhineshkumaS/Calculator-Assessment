@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.
+5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/calculator.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Basic Calculator Application</h1>
+    <form action="#" th:action="@{/calculator/result}" method="GET">
+        <div class="form-group">
+            <label for="numOne">Number One:</label>
+            <input type="number" id="numOne" name="numberOne" required>
+        </div>
+        <div class="form-group">
+            <label for="numTwo">Number Two: </label>
+            <input type="number" id="numTwo" name="numberTwo" required>
+        </div>
+        <div class="form-group">
+            <label for="operation">Select Operation</label>
+            <select name="operation" id="operation" required>
+                <option value="add">Addition</option>
+                <option value="sub">Subtraction</option>
+                <option value="multiply">Multiplication</option>
+                <option value="division">Division</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+    </form>
+    <div th:if="${result != null}" class="mt-4">
+        <h2 th:text = "${result}" class="text-success"></h2>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/
+umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.
+5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
